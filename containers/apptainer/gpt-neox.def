@@ -14,6 +14,9 @@ From: nvcr.io/nvidia/pytorch:24.02-py3
     export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/mpi/lib:/usr/local/mpi/lib64:${LD_LIBRARY_PATH}
     export PDSH_RCMD_TYPE=ssh
 
+%setup
+    mkdir -p "${APPTAINER_ROOTFS}/nfs"
+    
 %post
     # System packages
     apt-get update -y

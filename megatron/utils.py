@@ -175,6 +175,7 @@ def init_wandb(neox_args):
                 save_code=False,
                 force=False,
                 entity=neox_args.wandb_team,
+                settings=wandb.Settings(console="off"),
             )
         except wandb.UsageError as e:
             neox_args.update_value("use_wandb", False)
